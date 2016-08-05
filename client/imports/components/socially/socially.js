@@ -19,7 +19,7 @@ import { name as Navigation } from '../navigation/navigation';
 import { name as Auth } from '../auth/auth';
 
 
-var vis = require('ui-router-visualizer');
+var vis = window['ui-router-visualizer'];
 
 class Socially {}
 
