@@ -7,8 +7,6 @@ import 'ionic-sdk/release/js/ionic';
 import 'ionic-sdk/release/js/ionic-angular';
 import 'ionic-sdk/release/css/ionic.css';
 
-//import * as vis from 'ui-router-visualizer';
-
 import { Meteor } from 'meteor/meteor';
 
 import webTemplate from './web.html';
@@ -17,6 +15,8 @@ import { name as PartiesList } from '../partiesList/partiesList';
 import { name as PartyDetails } from '../partyDetails/partyDetails';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Auth } from '../auth/auth';
+
+import * as vis from 'ui-router-visualizer';
 
 class Socially {}
 
@@ -72,8 +72,7 @@ function config($locationProvider, $urlRouterProvider, $mdIconProvider) {
 function run($rootScope, $state, ng1UIRouter) {
   'ngInject';
 
-    var vis = window['ui-router-visualizer'];
-    vis.visualizer(ng1UIRouter);
+  vis.visualizer(ng1UIRouter);
 
   $rootScope.$on('$stateChangeError',
     (event, toState, toParams, fromState, fromParams, error) => {
