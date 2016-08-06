@@ -18,9 +18,6 @@ import { name as PartyDetails } from '../partyDetails/partyDetails';
 import { name as Navigation } from '../navigation/navigation';
 import { name as Auth } from '../auth/auth';
 
-
-var vis = window['ui-router-visualizer'];
-
 class Socially {}
 
 const name = 'socially';
@@ -32,7 +29,6 @@ export default angular.module(name, [
   ngMaterial,
   ngSanitize,
   uiRouter,
-  vis,
   PartiesList,
   PartyDetails,
   Navigation,
@@ -76,8 +72,8 @@ function config($locationProvider, $urlRouterProvider, $mdIconProvider) {
 function run($rootScope, $state, ng1UIRouter) {
   'ngInject';
 
-  var vis = window['ui-router-visualizer'];
-  vis.visualizer(ng1UIRouter);
+    var vis = window['ui-router-visualizer'];
+    vis.visualizer(ng1UIRouter);
 
   $rootScope.$on('$stateChangeError',
     (event, toState, toParams, fromState, fromParams, error) => {
