@@ -73,10 +73,11 @@ function config($locationProvider, $urlRouterProvider, $mdIconProvider) {
       iconPath + 'svg-sprite-image.svg');
 }
 
-function run($rootScope, $state) {
+function run($rootScope, $state, ng1UIRouter) {
   'ngInject';
 
-  //vis.visualizer(ng1UIRouter);
+  var vis = window['ui-router-visualizer'];
+  vis.visualizer(ng1UIRouter);
 
   $rootScope.$on('$stateChangeError',
     (event, toState, toParams, fromState, fromParams, error) => {
